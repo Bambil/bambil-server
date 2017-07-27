@@ -1,0 +1,20 @@
+version: '3'
+services:
+  proxy:
+    image: jwilder/nginx-proxy
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - /data/local/nginx/vhost.d:/etc/nginx/vhost.d
+      - /data/local/nginx/html:/usr/share/nginx/html
+      - /data/local/certs:/etc/nginx/certs
+      - /data/local/nginx/nginx_log:/var/log/nginx
+    ports:
+      - "0.0.0.0:80:80"
+
+    networks:
+      - edge
+
+networks:
+  edge:
+    external: true
+

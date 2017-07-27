@@ -1,0 +1,1 @@
+docker deploy -c docker-compose.yml nginx
