@@ -1,0 +1,15 @@
+version: '3'
+services:
+
+    ghost:
+        image: tabrizian/ghost:1.0
+        environment:
+          - VIRTUAL_HOST=blog.bambo.ga
+          - VIRTUAL_PORT=2368
+        ports:
+          - "2369:8080"
+        networks: [edge]
+
+networks:
+    edge:
+        external: true
