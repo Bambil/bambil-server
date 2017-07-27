@@ -1,0 +1,17 @@
+version: '3'
+services:
+
+    jenkins:
+        image: tabrizian/jenkins-node
+        user: root
+        environment:
+          - VIRTUAL_HOST=ci.bambo.ga
+          - VIRTUAL_PORT=8080
+        volumes:
+          - /data/local/jenkins:/var/jenkins_home
+          - /var/run/docker.sock:/var/run/docker.sock
+        networks: [edge]
+
+networks:
+    edge:
+        external: true
