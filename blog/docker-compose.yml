@@ -2,12 +2,12 @@ version: '3'
 services:
 
     ghost:
-        image: tabrizian/ghost:1.0
+        image: ghost
+        volumes:
+          - /data/local/blog:/var/lib/ghost
         environment:
-          - VIRTUAL_HOST=blog.bambo.ga
+          - VIRTUAL_HOST=blog.bambil.ml
           - VIRTUAL_PORT=2368
-        ports:
-          - "2369:8080"
         networks: [edge]
 
 networks:
