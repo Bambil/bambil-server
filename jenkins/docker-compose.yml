@@ -5,7 +5,7 @@ services:
         image: tabrizian/jenkins-node
         user: root
         environment:
-          - VIRTUAL_HOST=ci.bambo.ga
+          - VIRTUAL_HOST=ci.bambil.ml, ci.bambil.org
           - VIRTUAL_PORT=8080
         volumes:
           - /data/local/jenkins:/var/jenkins_home
